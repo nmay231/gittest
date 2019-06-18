@@ -1,0 +1,110 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: rgb(211, 211, 211);
+}
+
+h2, p, div.readme-wrapper{
+  text-align: center;
+}
+
+a {
+  color: forestgreen;
+  text-decoration: none;
+  font-style: italic;
+}
+
+a:hover {
+  /* Cursor already changes to a pointer, at least in Chrome */
+  cursor: pointer;
+  font-style: bold;
+  color: darkgreen;
+}
+
+.font-span {
+  color: purple;
+  font-weight: 200;
+}
+
+.boxes {
+  margin: 1.5em;
+  padding: 1.5em, 1em;
+  border: 2px solid rgb(154, 205, 50);
+  border-radius: 5%;
+  width: 30em;
+  /*display: inline-block;*/
+}
+
+#box1 {
+  background-color: rgba(255, 100, 0, .2);
+}
+
+#box2 {
+  background-color: rgba(255, 100, 0, .4);
+  /*position: absolute;
+  left: 35em;
+  top: 0;*/
+}
+
+#box3 {
+  background-color: rgba(255, 100, 0, .6);
+}
+
+#box4 {
+  background-color: rgba(255, 100, 0, .8);
+}
+
+.bg-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: blue;
+  position: relative;
+  left: 10px;
+  top: 50px;
+}
+
+h2 {
+  margin: 0 70px;
+  max-height: 3em;
+  min-height: 3em;
+}
+
+h1 {
+  color: blue;
+}
+
+h1.additional {
+  color: red;
+}
+
+#show1 {
+  color: rgb(250, 0, 0);
+}
+
+#show2 {
+  color: rgb(0, 250, 0);
+}
+
+#show3 {
+  color: rgb(0, 0, 250);
+}
+
+#show4 {
+  color: rgb(250, 250, 0);
+}
+
+#show5 {
+  color: rgb(250, 0, 250);
+}
+
+.star {
+  color: navy; /* I'm running out of ideas for colors*/
+}
+
+#wars {
+  color: rgb(1, 85, 85);
+}
+
+div.lists {
+  border: 2px solid black;
+}
