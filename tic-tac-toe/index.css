@@ -1,0 +1,29 @@
+div.board {
+    padding-top: 3em;
+    text-align: center;
+    clear: both;
+}
+
+.row > div {
+    float: left;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    cursor: pointer;
+}
+
+div.row {
+    clear: left;
+    margin: 0 auto;
+    width: 302px;
+}
+
+/* Cell borders */
+
+.left, .middle:not(.right), .center {
+    border-right: 1px black solid;
+}
+
+.top, .middle, .center {
+    border-bottom: 1px black solid;
+}
