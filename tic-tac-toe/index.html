@@ -7,26 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700i&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="board">
         <h1>Tic Tac Toe</h1>
+        <h3 class="turn">X's turn</h3>
+        <hr>
         <div class="row">
-            <div class="top left"></div>
-            <div class="top middle"></div>
-            <div class="top right"></div>
+            <div class="top left diag1"></div>
+            <div class="top center"></div>
+            <div class="top right diag2"></div>
         </div>
         <div class="row">
             <div class="middle left"></div>
-            <div class="center"></div>
+            <div class="middle center diag1 diag2"></div>
             <div class="middle right"></div>
         </div>
         <div class="row">
-            <div class="bottom left"></div>
-            <div class="bottom middle"></div>
-            <div class="bottom right"></div>
+            <div class="bottom left diag2"></div>
+            <div class="bottom center"></div>
+            <div class="bottom right diag1"></div>
         </div>
+        <script src="./app.js"></script>
     </div>
 </body>
 

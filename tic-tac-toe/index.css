@@ -4,12 +4,13 @@ div.board {
     clear: both;
 }
 
-.row > div {
+.row>div {
     float: left;
     height: 100px;
     width: 100px;
-    background-color: red;
     cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    font-size: 5em;
 }
 
 div.row {
@@ -18,12 +19,22 @@ div.row {
     width: 302px;
 }
 
+.result {
+    visibility: hidden;
+}
+
+hr {
+    width: 500px;
+}
+
 /* Cell borders */
 
-.left, .middle:not(.right), .center {
+.left,
+.center {
     border-right: 1px black solid;
 }
 
-.top, .middle, .center {
+.top,
+.middle {
     border-bottom: 1px black solid;
 }
