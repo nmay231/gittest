@@ -8,8 +8,13 @@ div.board {
     float: left;
     height: 100px;
     width: 100px;
+}
+
+.row>div>div {
+    height: 100px;
+    width: 100px;
     cursor: pointer;
-    font-family: 'Lato', sans-serif;
+    font-family: 'B612 Mono', 'Lato', sans-serif;
     font-size: 5em;
 }
 
@@ -29,12 +34,77 @@ hr {
 
 /* Cell borders */
 
-.left,
-.center {
+div.left,
+div.center {
     border-right: 1px black solid;
 }
 
-.top,
-.middle {
+div.top,
+div.middle {
     border-bottom: 1px black solid;
+}
+
+/* Include this for older versions of Chrome, Safari, and Opera */
+/*
+@-webkit-keyframes win {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+*/
+
+@keyframes win {
+    0% {
+        transform: rotate(0deg);
+        font-size: 5em;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        font-size: 5em;
+    }
+}
+
+.win {
+    /* -webkit-animation: win 5s infinite; /* Use for old browsers */
+    animation: win 1s 10;
+}
+
+@keyframes draw {
+    15% {
+        transform: rotate(-45deg);
+    }
+
+    30% {
+        transform: rotate(45deg);
+    }
+
+    45% {
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(1080deg);
+    }
+}
+
+.draw {
+    animation: draw 4s 1;
+}
+
+@keyframes placed {
+    0% {
+        font-size: 1px;
+    }
+    100% {
+        font-size: 5em;
+    }
+}
+
+.placed {
+    animation: placed 0.7s 1;
 }

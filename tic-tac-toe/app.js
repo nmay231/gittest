@@ -15,7 +15,7 @@ resetGameState()
 
 let turnHeading = document.querySelector('h3.turn')
 
-let cells = document.querySelectorAll('div.row > div')
+let cells = document.querySelectorAll('div.row > div > div')
 
 cells.forEach(cell => {
     cell.addEventListener('click', cellClicked)
@@ -31,8 +31,9 @@ function cellClicked(e) {
 
     if (e.target.textContent == '') {
         e.target.textContent = gameState.turn
+        e.target.classList.add('placed')
 
-        for (line of e.target.className.split(' ')) {
+        for (line of e.target.parentElement.className.split(' ')) {
             if (checkRow(line)) {
                 endGame(line)
                 return
@@ -46,6 +47,10 @@ function cellClicked(e) {
         if (gameState.turnCount >= 9) {
             gameState.GameFinished = true
             turnHeading.textContent = 'Oops! The game ended in a draw. Click to play again!'
+            for (cell of cells) {
+                cell.classList.remove('placed')
+                cell.classList.add('draw')
+            }
         }
     } else {
         gameState.badAttempts += 1
@@ -60,13 +65,14 @@ function resetGame() {
     turnHeading.textContent = X + '\'s turn'
     for (cell of cells) {
         cell.textContent = ''
-        cell.style.fontWeight = 'normal'
-        cell.style.fontStyle = 'normal'
+        cell.classList.remove('win')
+        cell.classList.remove('draw')
+        cell.classList.remove('placed')
     }
 }
 
 function checkRow(className) {
-    let cells = document.querySelectorAll('div.' + className)
+    let cells = document.querySelectorAll('div.' + className + ' > div')
     for (cell of cells) {
         if (cell.textContent != gameState.turn) {
             return false
@@ -76,10 +82,10 @@ function checkRow(className) {
 }
 
 function endGame(className) {
-    let winning = document.querySelectorAll('div.' + className)
+    let winning = document.querySelectorAll('div.' + className + ' > div')
     for (cell of winning) {
-        cell.style.fontWeight = 'bold'
-        cell.style.fontStyle = 'italic'
+        cell.classList.remove('placed')
+        cell.classList.add('win')
     }
     turnHeading.textContent = gameState.turn + ' Won the game! Click to play again!'
     gameState.GameFinished = true
